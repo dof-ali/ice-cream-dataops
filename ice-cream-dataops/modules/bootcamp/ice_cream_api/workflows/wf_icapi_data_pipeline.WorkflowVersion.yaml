@@ -2,7 +2,7 @@ workflowExternalId:wf_icapi_data_pipeline
 version:'1'
 workflowDefinition:
  tasks:
-  -externalId:create_asset_hierarchy_task
+  - externalId:create_asset_hierarchy_task
    type:transformation
    parameters:
     transformation:
@@ -12,7 +12,7 @@ workflowDefinition:
    onFailure:abortWorkflow
 
 
-  -externalId:contextualize_ts_assets_task
+  - externalId:contextualize_ts_assets_task
    type:transformation
    parameters:
     transformation:
@@ -21,10 +21,10 @@ workflowDefinition:
    timeout:3600
    onFailure:abortWorkflow
    dependsOn:
-    -externalId:create_asset_hierarchy_task
+    - externalId:create_asset_hierarchy_task
 
 
-  -externalId:icapi_datapoints_extractor_task
+  - externalId:icapi_datapoints_extractor_task
    type:function
    parameters:
     function:
@@ -35,10 +35,10 @@ workflowDefinition:
    timeout:3600
    onFailure:abortWorkflow
    dependsOn:
-    -externalId:contextualize_ts_assets_task
+    - externalId:contextualize_ts_assets_task
 
 
-  -externalId:oee_timeseries_task
+  - externalId:oee_timeseries_task
    type:function
    parameters:
     function:
@@ -49,4 +49,4 @@ workflowDefinition:
    timeout:3600
    onFailure:abortWorkflow
    dependsOn:
-    -externalId:icapi_datapoints_extractor_task
+    - externalId:icapi_datapoints_extractor_task
