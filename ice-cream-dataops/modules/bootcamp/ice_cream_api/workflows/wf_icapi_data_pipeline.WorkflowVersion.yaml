@@ -6,8 +6,8 @@ workflowDefinition:
    type: transformation
    parameters:
     transformation:
-    externalId: create_asset_hierarchy
-    data: { "hours": 1 }
+     externalId: create_asset_hierarchy
+     data: { "hours": 1 }
    retries: 3
    timeout: 3600
    onFailure: abortWorkflow
@@ -16,8 +16,8 @@ workflowDefinition:
    type: transformation
    parameters:
     transformation:
-    externalId: contextualize_ts_assets
-    data: { "hours": 1 }
+     externalId: contextualize_ts_assets
+     data: { "hours": 1 }
    retries: 3
    timeout: 3600
    onFailure: abortWorkflow
@@ -27,9 +27,9 @@ workflowDefinition:
  - externalId: icapi_datapoints_extractor_task
    type: function
    parameters:
-   function:
-    externalId: icapi_datapoints_extractor
-    data: { "hours": 1 }
+    function:
+     externalId: icapi_datapoints_extractor
+     data: { "hours": 1 }
    retries: 3
    timeout: 3600
    onFailure: abortWorkflow
